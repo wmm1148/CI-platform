@@ -1,0 +1,202 @@
+<div class="card-container">
+  <nz-tabset [nzTabPosition]="'top'" [nzType]="'card'">
+    <nz-tab [nzTitle]="'所有配备设施'">
+      <div class="all" style="display: flex">
+        <nz-tree [nzData]="nodes" nzCheckable nzMultiple [nzCheckedKeys]="AllCheckedKeys"
+          [nzExpandedKeys]="AllExpandedKeys">
+        </nz-tree>
+        <div class="fill-remaining-space"></div>
+        <div class="p-button" style="width: 80%;">
+          <img [src]="'./assets/jpg/selected.jpg'" alt="" style="width: 100%;">
+        </div>
+        <div class="fill-remaining-space"></div>
+        <div style="width: 10%">
+          <button nz-button class="fun1-button" nzType="primary">改造</button>
+          <br>
+          <br>
+          <button nz-button class="fun1-button" nzType="primary">维修</button>
+          <br>
+          <br>
+          <button nz-button nzType="primary">拆除</button>
+          <br>
+          <br>
+          <button nz-button nzType="primary">检测</button>
+          <br>
+          <br>
+          <button nz-button nzType="primary">活动占用</button>
+          <br>
+          <br>
+          <button nz-button nzType="primary">求援占用</button>
+          <br>
+          <br>
+          <button nz-button nzType="primary">修理</button>
+          <br>
+          <br>
+          <button nz-button nzType="primary">更换</button>
+          <br>
+          <br>
+        </div>
+      </div>
+    </nz-tab>
+    <nz-tab [nzTitle]="'入口门卫图'">
+      <div class="all" style="display: flex">
+        <nz-tree [nzData]="nodes" nzCheckable nzMultiple [nzCheckedKeys]="GuardCheckedKeys"
+          [nzExpandedKeys]="GuardExpandedKeys">
+        </nz-tree>
+        <div class="fill-remaining-space"></div>
+        <div class="pic" style="width: 80%;">
+          <img [src]="'./assets/jpg/guard.png'" alt="" style="width: 100%">
+        </div>
+        <div class="fill-remaining-space"></div>
+        <div style="width: 10%">
+          <button nz-button class="fun1-button" nzType="primary">改造</button>
+          <br>
+          <br>
+          <button nz-button class="fun1-button" nzType="primary">维修</button>
+          <br>
+          <br>
+          <button nz-button nzType="primary">拆除</button>
+          <br>
+          <br>
+          <button nz-button nzType="primary">检测</button>
+          <br>
+          <br>
+          <button nz-button nz-popover class="pic-button" nzType="primary" nzTitle="放大图" nzShape="circle"
+            [nzContent]="contentGuard" nzPlacement="right"><i nz-icon nzType="search"></i></button>
+        </div>
+      </div>
+      <!-- <button nz-button class="fun1-button" nzType="primary">改造</button>
+      <button nz-button class="fun2-button" nzType="primary">维修</button>
+      <button nz-button class="fun3-button" nzType="primary">拆除</button>
+      <button nz-button class="fun4-button" nzType="primary">检测</button> -->
+      <!-- <button nz-button nz-popover class="pic-button" nzType="primary" nzTitle="放大图" nzShape="circle"
+        [nzContent]="contentGuard" nzPlacement="right"><i nz-icon nzType="search"></i></button> -->
+    </nz-tab>
+    <nz-tab [nzTitle]="'消防通道'">
+      <div class="all" style="display: flex">
+        <nz-tree [nzData]="nodes" nzCheckable nzMultiple [nzCheckedKeys]="FireCheckedKeys"
+          [nzExpandedKeys]="FireExpandedKeys">
+        </nz-tree>
+        <div class="fill-remaining-space"></div>
+        <div class="pic" style="width: 80%;">
+          <img [src]="'./assets/jpg/passage.png'" alt="" style="width: 100%;">
+          <!-- <button nz-button nz-popover class="pic-button" nzType="primary" nzTitle="放大图" nzShape="circle"
+            [nzContent]="contentPassage" nzPlacement="right"><i nz-icon nzType="search"></i></button> -->
+        </div>
+        <div class="fill-remaining-space"></div>
+        <div style="width: 10%">
+          <button nz-button class="fun1-button" nzType="primary">改造</button>
+          <br>
+          <br>
+          <button nz-button nzType="primary">活动占用</button>
+          <br>
+          <br>
+          <button nz-button nzType="primary">求援占用</button>
+          <br>
+          <br>
+          <button nz-button nz-popover class="pic-button" nzType="primary" nzTitle="放大图" nzShape="circle"
+            [nzContent]="contentPassage" nzPlacement="topRight"><i nz-icon nzType="search"></i></button>
+        </div>
+      </div>
+      <!-- <button nz-button class="fun1-button" nzType="primary">改造</button>
+      <button nz-button class="fun2-button" nzType="primary">活动占用</button>
+      <button nz-button class="fun3-button" nzType="primary">求援占用</button> -->
+      <!-- <button nz-button nz-popover class="pic-button" nzType="primary" nzTitle="放大图" nzShape="circle"
+        [nzContent]="contentPassage" nzPlacement="topRight"><i nz-icon nzType="search"></i></button> -->
+    </nz-tab>
+    <nz-tab [nzTitle]="'消防栓设置'">
+      <div class="all" style="display: flex">
+        <nz-tree [nzData]="nodes" nzCheckable nzMultiple [nzCheckedKeys]="HydrantCheckedKeys"
+          [nzExpandedKeys]="HydrantExpandedKeys">
+        </nz-tree>
+        <div class="fill-remaining-space"></div>
+        <div class="pic" style="width: 80%;">
+          <img [src]="'./assets/jpg/hydrant.png'" alt="" style="width: 100%;">
+          <!-- <button nz-button class="fun1-button" nzType="primary">检测</button>
+          <button nz-button class="fun2-button" nzType="primary">更换</button> -->
+          <!-- <button nz-button nz-popover class="pic-button" nzType="primary" nzTitle="放大图" nzShape="circle"
+            [nzContent]="contentHydrant" nzPlacement="right"><i nz-icon nzType="search"></i></button> -->
+        </div>
+        <div class="fill-remaining-space"></div>
+        <div style="width: 10%">
+          <button nz-button nzType="primary">检测</button>
+          <br>
+          <br>
+          <button nz-button nzType="primary">更换</button>
+          <br>
+          <br>
+          <button nz-button nz-popover class="pic-button" nzType="primary" nzTitle="放大图" nzShape="circle"
+          [nzContent]="contentHydrant" nzPlacement="right"><i nz-icon nzType="search"></i></button>
+        </div>
+      </div>
+    </nz-tab>
+    <nz-tab [nzTitle]="'楼层显示'">
+      <div class="all" style="display: flex">
+        <nz-tree [nzData]="nodes" nzCheckable nzMultiple>
+        </nz-tree>
+        <div class="fill-remaining-space"></div>
+        <div class="pic" style="width: 80%;">
+          <img [src]="'./assets/jpg/hyd.jpg'" alt="" style="width: 100%;">
+        </div>
+        <div class="fill-remaining-space"></div>
+        <div style="width: 10%">
+          <button nz-button nzType="primary">检测</button>
+          <br>
+          <br>
+          <button nz-button nzType="primary">更换</button>
+          <br>
+          <br>
+        </div>
+      </div>
+      <!-- <button nz-button class="fun1-button" nzType="primary">检测</button>
+      <button nz-button class="fun2-button" nzType="primary">更换</button> -->
+    </nz-tab>
+    <nz-tab [nzTitle]="'监控设置'">
+      <div class="all" style="display: flex">
+        <nz-tree [nzData]="nodes" nzCheckable nzMultiple [nzCheckedKeys]="MonitorCheckedKeys"
+          [nzExpandedKeys]="MonitorExpandedKeys">
+        </nz-tree>
+        <div class="fill-remaining-space"></div>
+        <div class="pic" style="width: 80%;">
+          <img [src]="'./assets/jpg/monitor.jpg'" alt="" style="width: 100%;">
+        </div>
+        <div class="fill-remaining-space"></div>
+        <div style="width: 10%">
+          <button nz-button nzType="primary">检测</button>
+          <br>
+          <br>
+          <button nz-button nzType="primary">更换</button>
+          <br>
+          <br>
+          <button nz-button nz-popover nzType="primary" nzTitle="放大图" nzShape="circle" [nzContent]="contentMonitor"
+            nzPlacement="right"><i nz-icon
+              nzType="search"></i></button>
+        </div>
+      </div>
+      <!-- <button nz-button class="fun1-button" nzType="primary">检测</button>
+      <button nz-button class="fun2-button" nzType="primary">更换</button> -->
+      <!-- <button nz-button nz-popover nzType="primary" nzTitle="放大图" nzShape="circle"
+        [nzContent]="contentMonitor" nzPlacement="right" style="position: fixed;left: 575px;bottom: 225px;"><i nz-icon nzType="search"></i></button> -->
+    </nz-tab>
+  </nz-tabset>
+  <ng-template #contentPassage>
+    <div>
+      <img [src]="'./assets/jpg/big-passage.jpg'" alt="" style="width: 700px;">
+    </div>
+  </ng-template>
+  <ng-template #contentGuard>
+    <div>
+      <img [src]="'./assets/jpg/big-guard.jpg'" alt="" style="width: 700px;">
+    </div>
+  </ng-template>
+  <ng-template #contentMonitor>
+    <div>
+      <img [src]="'./assets/jpg/big-monitor.jpg'" alt="" style="width: 700px;">
+    </div>
+  </ng-template>
+  <ng-template #contentHydrant>
+    <div>
+      <img [src]="'./assets/jpg/big-hydrant.jpg'" alt="" style="width: 700px;">
+    </div>
+  </ng-template>
+</div>

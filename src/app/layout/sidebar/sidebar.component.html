@@ -1,0 +1,10 @@
+<div class="words">
+  <nz-tabset [nzTabPosition]="'right'" [nzType]="'card'" [nzSize]="'large'">
+    <nz-tab *ngFor="let tab of tabs" [nzTitle]="titleTemplate" class="tab">
+      <ng-template #titleTemplate> <i nz-icon [nzType]="tab.icon"></i>{{ tab.name }} </ng-template>
+      {{ tab.content }}
+    </nz-tab>
+  </nz-tabset>
+</div>
+<!-- 
+<i nz-icon [nzType]="'home'"></i> -->
