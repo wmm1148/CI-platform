@@ -1,7 +1,7 @@
 <div class="card-container">
   <nz-tabset [nzTabPosition]="'top'" [nzType]="'card'">
     <nz-tab [nzTitle]="'所有配备设施'">
-      <div class="all" style="display: flex">
+      <div class="all" style="display: flex;flex-direction: row">
         <nz-tree [nzData]="nodes" nzCheckable nzMultiple [nzCheckedKeys]="AllCheckedKeys"
           [nzExpandedKeys]="AllExpandedKeys">
         </nz-tree>
